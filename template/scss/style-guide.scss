@@ -1,0 +1,213 @@
+
+@import 'partials/prefix-mixins';
+@import 'partials/layout'; // responsive grid and media queries
+@import url(https://cdn.rawgit.com/arthursucks/opencomicfont/master/import.css);
+@font-face { font-family: comicTitle; src: url('../../fonts/KGHAPPY.ttf'); }
+@font-face { font-family: comic2; src: url('../../fonts/KICOB___.TTF'); }
+@font-face { font-family: comic1; src: url('../../fonts/SF Wonder Comic.ttf'); }
+// color palette - these colors will be the color swatches of the Colors section
+
+$color-1: #5f8ee4; // Cornflower Blue - Action color
+$color-2: #19191a; // Dark Blue
+$color-3: #e4655f; // Red
+$color-4: #e6e6e6; // light grey
+$color-5: #ffffff; // white
+$color-6: #ff0700; // red
+$color-7: #ffff00; // yeller
+$color-8: #9c00f1; // purple
+$color-9: #00f610; // green
+
+// additional colors
+
+$success: #6fce72; // green
+$alert: $color-3;  // red
+
+// fonts
+
+$primary-font: 'Merriweather', serif;
+$comicTitle: comicTitle;
+$comic1: comic1;
+$comic2: comic2;
+
+/* -------------------------------- 
+
+xBackground 
+
+-------------------------------- */
+
+body {
+	/* this is the page background */
+	background-color: $color-5;
+}
+
+/* -------------------------------- 
+
+xPatterns
+
+-------------------------------- */
+
+.cd-box {
+	/* this is the container of various design elements - i.e. the 2 logo of the branding section */
+	border: 1px solid $color-4;
+	border-radius: 3px;
+	background: $color-5;
+	box-shadow: 0 1px 1px rgba(#000, .05);
+	padding: 6px;
+}
+
+/* -------------------------------- 
+
+xNavigation 
+
+-------------------------------- */
+
+header {
+	background-color: $color-2;
+}
+
+.cd-logo {
+	/* logo box style */
+	background-color: $color-1;
+	width: 120px;
+
+	@include MQ(M) {
+		width: 180px;
+	}
+}
+
+.cd-main-nav {
+	/* main navigation background color - full screen on small devices */
+	background: $color-2;
+
+	li a {
+		color: $color-5;
+		border-color: lighten($color-2, 5%);
+	}
+
+	@include MQ(M) {
+		li a {
+			color: lighten($color-2, 40%);
+
+			&.selected {
+				color: $color-5;
+				box-shadow: 0 2px 0 $color-1;
+			}
+
+			.no-touch &:hover {
+				color: $color-5;
+			}
+		}
+	}
+}
+
+.cd-nav-trigger span {
+	/* hamburger menu */
+	background-color: $color-5;
+
+	&::before,
+	&::after {
+		/* upper and lower lines */
+		background-color: $color-5;
+	}
+}
+
+.nav-is-visible .cd-nav-trigger span {
+	/* hide line in the center on mobile when nav is visible */
+	background-color: rgba($color-5, 0);
+
+	&::before, &::after {
+		/* preserve visibility of upper and lower lines - close icon */
+		background-color: rgba($color-5, 1);
+	}
+}
+
+.cd-download {
+	/* download button top-right visible on big devices */
+	background-color: lighten($color-2, 10%);
+
+	.no-touch &:hover {
+		background-color: lighten($color-2, 15%);
+	}
+
+	span {
+		/* tooltip */
+		background: $color-1;
+		color: $color-5;
+
+		&::before {
+			/* right arrow color */
+			border-color: $color-1;
+		}
+	}
+}
+
+/* -------------------------------- 
+
+xPage title 
+
+-------------------------------- */
+
+main > h1 {
+	color: $color-2;
+
+	@include MQ(L) {
+		/* title goes into the header on big devices */
+		color: $color-5;
+	}
+}
+
+@import 'partials/typography';
+
+/* -------------------------------- 
+
+xButtons 
+
+-------------------------------- */
+
+.cd-buttons .cd-box {
+	#pow {
+		padding: 50px;
+		text-decoration: none;
+		color: red;
+		font-weight: bold;
+		font-size: 2em;
+		background: url("http://jtemerson.net/sandbox/pow.png") center no-repeat;
+	}
+
+	#thought {
+		padding: 50px;
+		text-decoration: none;
+		color: red;
+		font-weight: bold;
+		font-size: 2em;
+		background: url("http://jtemerson.net/sandbox/thought-bubble.png") center no-repeat;
+	}
+
+	#speech {
+		padding: 50px;
+		text-decoration: none;
+		color: red;
+		font-weight: bold;
+		font-size: 2em;
+		background: url("http://jtemerson.net/sandbox/speech-bubble.png") center no-repeat;
+	}
+}
+
+/* -------------------------------- 
+
+xIcons 
+
+-------------------------------- */
+
+.cd-icons li {
+	/* icons size */
+	width: 370px;
+	height: 285px;
+}
+
+.cd-layouts li {
+	width: 370px;
+	height: 285px;
+}
+
+@import 'partials/basic-style';

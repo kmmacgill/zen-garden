@@ -2,16 +2,16 @@
 @font-face { font-family: comic2; src: url('./fonts/KICOBI__.TTF'); }
 @font-face { font-family: comic1; src: url('./fonts/SF Wonder Comic.ttf'); }
 // color palette - these colors will be the color swatches of the Colors section
-
-$color-1: #5f8ee4; // Cornflower Blue - Action color
-$color-2: #19191a; // Dark Blue
-$color-3: #e4655f; // Red
-$color-4: #e6e6e6; // light grey
-$color-5: #ffffff; // white
-$color-6: #ff0700; // red
-$color-7: #ffff00; // yeller
-$color-8: #9c00f1; // purple
-$color-9: #00f610; // green
+$light-blue: #5f8ee4; // Cornflower Blue - Action color
+$dark-blue: #19191a; // Dark Blue
+$light-red: #e4655f; // Red
+$light-gray: #e6e6e6; // light grey
+$darkGray: #2c2c2c;
+$white: #ffffff; // white
+$red: #ff0700; // red
+$yellow: #ffff00; // yeller
+$purple: #9c00f1; // purple
+$green: #00f610; // green
 
 $comicTitle: comicTitle;
 $comic1: comic1;
@@ -20,7 +20,7 @@ $comic2: comic2;
 body {
   font-family: comic2;
   a {
-    color: $color-7;
+    color: $yellow;
   }
 }
 
@@ -57,7 +57,7 @@ body {
               "h1" "h2";
       grid-area: header;
       text-align: center;
-      font-family: comicTitle;
+      font-family: $comicTitle;
       justify-self: center;
       h1 {
         grid-area: h1;
@@ -70,11 +70,11 @@ body {
     }
     .summary {
       grid-area: summary;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
     .preamble {
       grid-area: preamble;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
   }
 
@@ -101,7 +101,7 @@ body {
       grid-area: req;
     }
     div {
-      background-color: $color-4;
+      background-color: $light-gray;
       border-radius: 10px;
     }
     footer {
@@ -120,7 +120,7 @@ body {
 
   aside {
     grid-area: sidebar;
-    background-color: $color-3;
+    background-color: $light-red;
     .wrapper {
       display: grid;
       grid-template-columns: 100%;
@@ -173,7 +173,7 @@ body {
               "h1 h2 h2 h2";
       grid-area: header;
       text-align: center;
-      font-family: comicTitle;
+      font-family: $comicTitle;
       justify-self: center;
       h1 {
         grid-area: h1;
@@ -186,11 +186,11 @@ body {
     }
     .summary {
       grid-area: summary;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
     .preamble {
       grid-area: preamble;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
   }
 
@@ -219,7 +219,7 @@ body {
       grid-area: req;
     }
     div {
-      background-color: $color-4;
+      background-color: $light-gray;
       border-radius: 10px;
     }
     footer {
@@ -238,14 +238,14 @@ body {
 
   aside {
     grid-area: sidebar;
-    background-color: $color-3;
+    background-color: $light-red;
     .wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
-      "des arch"
-      "des res";
+              "des arch"
+              "des res";
       .design-archives {
         grid-area: arch;
       }
@@ -267,9 +267,7 @@ body {
     grid-template-rows: auto;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
-    grid-template-areas:
-            "intro intro intro intro intro intro"
-            "main main main main main sidebar";
+    grid-template-areas: "intro intro intro intro intro intro" "main main main main main sidebar";
   }
 
   .intro {
@@ -277,74 +275,284 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas:
-            "preamble header header"
-            "preamble header header"
-            "summary header header";
+    grid-template-areas: "preamble header header" "preamble header header" "summary header header";
     background-color: lime;
     grid-column-gap: 10px;
     header {
       grid-area: header;
       font-size: 3em;
       text-align: center;
-      font-family: comicTitle;
+      font-family: $comicTitle;
       justify-self: center;
     }
     .summary {
       grid-area: summary;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
     .preamble {
       grid-area: preamble;
-      background-color: $color-1;
+      background-color: $light-blue;
     }
   }
 
   .main {
     grid-area: main;
-    background-color: orange;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-            "req part ben"
-            "req . exp"
-            "foot foot foot";
-    .explanation {
-      grid-area: exp;
-    }
-    .participation {
-      grid-area: part;
-    }
-    .benefits {
-      grid-area: ben;
-    }
-    .requirements {
-      grid-area: req;
-    }
+    height: 2000px;
+    display: flex;
+    flex-flow: column nowrap;;
     div {
-      background-color: $color-4;
+      background-color: $light-gray;
       border-radius: 10px;
+      height: 25%;
+      margin-top: 1%;
     }
     footer {
       grid-area: foot;
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
       font-size: 2em;
       background-color: black;
       a {
         text-decoration: none;
       }
     }
+
+    //comic strips
+    .explanation {
+      font-size: 1.5em;
+      color: $dark-blue;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2";
+      h3 {
+        grid-area: head;
+        position: relative;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%;
+      }
+
+      p{
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+
+      p:nth-of-type(1) {
+        grid-area: p1;
+        position: relative;
+        background-color: $yellow;
+        border-radius: .4em;
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-left-color: $yellow;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -26px;
+          margin-right: -52px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          right: 5%;
+          top: 0;
+          width: 500px;
+          height: 350px;
+          background-image: url("./imgs/flyer.png");
+          background-size: cover;
+          margin-top: -60px;
+          margin-right: -420px;
+        }
+      }
+
+      p:nth-of-type(2) {
+        grid-area: p2;
+        position: relative;
+        background-color: $yellow;
+        border-radius: .4em;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 62px solid transparent;
+          border-right-color: $yellow;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -31px;
+          margin-left: -62px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: -80px;
+          margin-left: -250px;
+          background-image: url('./imgs/1.png');
+          background-size: cover;
+        }
+      }
+    }
+    .participation {
+      p{
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+
+      a {
+        color: $purple
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+              "head . ."
+              "p1 . ."
+              ". . p2"
+              "p3 . .";
+
+      h3 {
+        grid-area: head;
+      }
+      p:nth-of-type(1) {
+        grid-area: p1;
+        position: relative;
+        background-color: $green;
+        border-radius: .4em;
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-left-color: $green;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -26px;
+          margin-right: -52px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: -100px;
+          margin-left: 350px;
+          background-image: url('./imgs/ironcat.png');
+          background-size: cover;
+        }
+      }
+      p:nth-of-type(2) {
+        grid-area: p2;
+        position: relative;
+        background: orange;
+        border-radius: .4em;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 100px solid transparent;
+          border-bottom-color: orange;
+          border-top: 0;
+          border-left: 0;
+          margin-left: -50px;
+          margin-top: -100px;
+        }
+      }
+      p:nth-of-type(3) {
+        grid-area: p3;
+        position: relative;
+        background: $purple;
+        top: -25%;
+        border-radius: .4em;
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 56px solid $purple;
+          border-left-color: $purple;
+          border-radius: 100%;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-right: -56px;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 56px solid $purple;
+          border-left-color: $purple;
+          border-radius: 100%;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-right: -56px;
+        }
+      }
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2";
+
+      p:nth-of-type(1) {
+        grid-area: p1;
+      }
+      p:nth-of-type(2) {
+        grid-area: p2;
+      }
+    }
+    .requirements {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: ". . head" "p1 . ." ". . p2" "p3 . .";
+
+      h3 {
+        grid-area: head;
+      }
+      p:nth-of-type(1) {
+        grid-area: p1;
+      }
+      p:nth-of-type(2) {
+        grid-area: p2;
+      }
+      p:nth-of-type(3) {
+        grid-area: p3;
+      }
+    }
   }
 
   aside {
     grid-area: sidebar;
-    background-color: $color-3;
+    background-color: $light-red;
   }
 
 }

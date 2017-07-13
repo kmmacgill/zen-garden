@@ -212,34 +212,212 @@ body {
 
   .main {
     grid-area: main;
-    background-color: orange;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "req part ben" "req . exp" "foot foot foot"; }
-    .main .explanation {
-      grid-area: exp; }
-    .main .participation {
-      grid-area: part; }
-    .main .benefits {
-      grid-area: ben; }
-    .main .requirements {
-      grid-area: req; }
+    height: 2000px;
+    display: flex;
+    flex-flow: column nowrap; }
     .main div {
       background-color: #e6e6e6;
-      border-radius: 10px; }
+      border-radius: 10px;
+      height: 25%;
+      margin-top: 1%; }
     .main footer {
       grid-area: foot;
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
       font-size: 2em;
       background-color: black; }
       .main footer a {
         text-decoration: none; }
+    .main .explanation {
+      font-size: 1.5em;
+      color: #19191a;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2"; }
+      .main .explanation h3 {
+        grid-area: head;
+        position: relative;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
+      .main .explanation p {
+        margin-left: 5%;
+        margin-right: 5%; }
+      .main .explanation p:nth-of-type(1) {
+        grid-area: p1;
+        position: relative;
+        background-color: #ffff00;
+        border-radius: .4em; }
+        .main .explanation p:nth-of-type(1):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-left-color: #ffff00;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -26px;
+          margin-right: -52px; }
+        .main .explanation p:nth-of-type(1):before {
+          content: '';
+          position: absolute;
+          right: 5%;
+          top: 0;
+          width: 500px;
+          height: 350px;
+          background-image: url("./imgs/flyer.png");
+          background-size: cover;
+          margin-top: -60px;
+          margin-right: -420px; }
+      .main .explanation p:nth-of-type(2) {
+        grid-area: p2;
+        position: relative;
+        background-color: #ffff00;
+        border-radius: .4em; }
+        .main .explanation p:nth-of-type(2):after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 62px solid transparent;
+          border-right-color: #ffff00;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -31px;
+          margin-left: -62px; }
+        .main .explanation p:nth-of-type(2):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: -80px;
+          margin-left: -250px;
+          background-image: url("./imgs/1.png");
+          background-size: cover; }
+    .main .participation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 . ." ". . p2" "p3 . ."; }
+      .main .participation p {
+        margin-left: 5%;
+        margin-right: 5%; }
+      .main .participation a {
+        color: #9c00f1; }
+      .main .participation h3 {
+        grid-area: head; }
+      .main .participation p:nth-of-type(1) {
+        grid-area: p1;
+        position: relative;
+        background-color: #00f610;
+        border-radius: .4em; }
+        .main .participation p:nth-of-type(1):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-left-color: #00f610;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -26px;
+          margin-right: -52px; }
+        .main .participation p:nth-of-type(1):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: -100px;
+          margin-left: 350px;
+          background-image: url("./imgs/ironcat.png");
+          background-size: cover; }
+      .main .participation p:nth-of-type(2) {
+        grid-area: p2;
+        position: relative;
+        background: orange;
+        border-radius: .4em; }
+        .main .participation p:nth-of-type(2):after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 100px solid transparent;
+          border-bottom-color: orange;
+          border-top: 0;
+          border-left: 0;
+          margin-left: -50px;
+          margin-top: -100px; }
+      .main .participation p:nth-of-type(3) {
+        grid-area: p3;
+        position: relative;
+        background: #9c00f1;
+        top: -25%;
+        border-radius: .4em; }
+        .main .participation p:nth-of-type(3):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 56px solid #9c00f1;
+          border-left-color: #9c00f1;
+          border-radius: 100%;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-right: -56px; }
+        .main .participation p:nth-of-type(3):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 56px solid #9c00f1;
+          border-left-color: #9c00f1;
+          border-radius: 100%;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-right: -56px; }
+    .main .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2"; }
+      .main .benefits p:nth-of-type(1) {
+        grid-area: p1; }
+      .main .benefits p:nth-of-type(2) {
+        grid-area: p2; }
+    .main .requirements {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: ". . head" "p1 . ." ". . p2" "p3 . ."; }
+      .main .requirements h3 {
+        grid-area: head; }
+      .main .requirements p:nth-of-type(1) {
+        grid-area: p1; }
+      .main .requirements p:nth-of-type(2) {
+        grid-area: p2; }
+      .main .requirements p:nth-of-type(3) {
+        grid-area: p3; }
 
   aside {
     grid-area: sidebar;

@@ -308,7 +308,7 @@ body {
           top: 0;
           width: 500px;
           height: 350px;
-          background-image: url("./imgs/flyer.png");
+          background-image: url("imgs/flying1.png");
           background-size: cover;
           margin-top: -60px;
           margin-right: -420px; }
@@ -339,7 +339,7 @@ body {
           height: 250px;
           margin-top: -80px;
           margin-left: -250px;
-          background-image: url("./imgs/1.png");
+          background-image: url("imgs/generic4.png");
           background-size: cover; }
     .main .participation {
       display: grid;
@@ -349,10 +349,23 @@ body {
       .main .participation p {
         margin-left: 5%;
         margin-right: 5%; }
-      .main .participation a {
-        color: #9c00f1; }
       .main .participation h3 {
-        grid-area: head; }
+        grid-area: head;
+        position: relative;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
+        .main .participation h3:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: 245px;
+          margin-left: 475px;
+          background-image: url("imgs/xavier.PNG");
+          background-size: cover; }
       .main .participation p:nth-of-type(1) {
         grid-area: p1;
         position: relative;
@@ -400,13 +413,24 @@ body {
           border-left: 0;
           margin-left: -50px;
           margin-top: -100px; }
+        .main .participation p:nth-of-type(2):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 35%;
+          width: 250px;
+          height: 235px;
+          margin-top: -270px;
+          margin-left: 25px;
+          background-image: url("./imgs/generic1.PNG");
+          background-size: cover; }
       .main .participation p:nth-of-type(3) {
         grid-area: p3;
         position: relative;
         background: #9c00f1;
         top: -25%;
         border-radius: .4em; }
-        .main .participation p:nth-of-type(3):after {
+        .main .participation p:nth-of-type(3):before {
           content: '';
           position: absolute;
           right: 0;
@@ -419,7 +443,7 @@ body {
           border-right: 0;
           border-top: 0;
           margin-top: -28px;
-          margin-right: -56px; }
+          margin-right: -60px; }
         .main .participation p:nth-of-type(3):after {
           content: '';
           position: absolute;
@@ -427,35 +451,82 @@ body {
           top: 50%;
           width: 0;
           height: 0;
-          border: 56px solid #9c00f1;
+          border: 36px solid #9c00f1;
           border-left-color: #9c00f1;
           border-radius: 100%;
           border-right: 0;
           border-top: 0;
           margin-top: -28px;
-          margin-right: -56px; }
+          margin-right: -120px; }
     .main .benefits {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2"; }
-      .main .benefits p:nth-of-type(1) {
-        grid-area: p1; }
-      .main .benefits p:nth-of-type(2) {
-        grid-area: p2; }
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ."; }
+      .main .benefits h3 {
+        grid-area: head;
+        font-size: 2em;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%;
+        position: relative; }
+        .main .benefits h3after {
+          content: ". . .";
+          position: absolute; }
+      .main .benefits p {
+        grid-area: p1;
+        margin-left: 15px;
+        position: relative;
+        background: #ff0700;
+        border-radius: .4em;
+        font-size: 1.65em; }
+        .main .benefits p:before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 75px solid transparent;
+          border-left-color: #ff0700;
+          border-right: 0;
+          margin-top: -74px;
+          margin-right: -74px; }
+        .main .benefits p:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 600px;
+          height: 550px;
+          margin-top: -250px;
+          margin-right: -420px;
+          background-image: url("./imgs/generic5.png");
+          background-size: cover; }
     .main .requirements {
+      font-size: .9em;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: ". . head" "p1 . ." ". . p2" "p3 . ."; }
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "head p1 ." "p2 . p3" ". p4 ." ". . p5"; }
       .main .requirements h3 {
-        grid-area: head; }
+        grid-area: head;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
       .main .requirements p:nth-of-type(1) {
         grid-area: p1; }
       .main .requirements p:nth-of-type(2) {
         grid-area: p2; }
       .main .requirements p:nth-of-type(3) {
         grid-area: p3; }
+      .main .requirements p:nth-of-type(4) {
+        grid-area: p4; }
+      .main .requirements p:nth-of-type(5) {
+        grid-area: p5;
+        background-color: #e4655f;
+        margin-right: 25px;
+        transform: skewX(-15deg); }
 
   aside {
     grid-area: sidebar;

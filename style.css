@@ -10,12 +10,33 @@
 @font-face {
   font-family: ave;
   src: url("./fonts/AVENGEANCE HEROIC AVENGER.ttf"); }
+@keyframes pulse {
+  0% {
+    transform: scale(0.9); }
+  49% {
+    transform: scale(0.9); }
+  50% {
+    transform: scale(1); }
+  51% {
+    transform: scale(0.9); }
+  52% {
+    transform: scale(1); }
+  53% {
+    transform: scale(0.9); }
+  97% {
+    transform: scale(0.9); }
+  98% {
+    transform: scale(1); }
+  99% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(0.9); } }
 body {
   font-family: comic2;
   background: url("https://s-media-cache-ak0.pinimg.com/originals/2f/d1/63/2fd1633c70ff4e1ef4b1fa9d15817b2e.jpg");
   background-size: 150px 150px; }
 
-@media (max-width: 550px) {
+@media (max-width: 640px) {
   .page-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -99,91 +120,7 @@ body {
         grid-area: des; }
       aside .wrapper .zen-resources {
         grid-area: res; } }
-@media (min-width: 550px) and (max-width: 900px) {
-  .page-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
-    grid-template-areas: "intro intro intro intro intro intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main main main main main main"; }
-
-  .intro {
-    grid-area: intro;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "header header header" "preamble preamble preamble" "summary summary summary";
-    background-color: lime;
-    grid-column-gap: 10px; }
-    .intro header {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "h1 h2 h2 h2";
-      grid-area: header;
-      text-align: center;
-      font-family: comicTitle;
-      justify-self: center; }
-      .intro header h1 {
-        grid-area: h1;
-        font-size: 3em; }
-      .intro header h2 {
-        grid-area: h2;
-        font-size: 3em; }
-    .intro .summary {
-      grid-area: summary;
-      background-color: #5f8ee4; }
-    .intro .preamble {
-      grid-area: preamble;
-      background-color: #5f8ee4; }
-
-  .main {
-    grid-area: main;
-    background-color: orange;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "req part ben" "req . exp" "foot foot foot"; }
-    .main .explanation {
-      grid-area: exp; }
-    .main .participation {
-      grid-area: part; }
-    .main .benefits {
-      grid-area: ben; }
-    .main .requirements {
-      grid-area: req; }
-    .main div {
-      background-color: #e6e6e6;
-      border-radius: 10px; }
-    .main footer {
-      grid-area: foot;
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      font-size: 2em;
-      background-color: black; }
-      .main footer a {
-        text-decoration: none; }
-
-  aside {
-    grid-area: sidebar;
-    background-color: #e4655f; }
-    aside .wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "des arch" "des res"; }
-      aside .wrapper .design-archives {
-        grid-area: arch; }
-      aside .wrapper .design-selection {
-        grid-area: des; }
-      aside .wrapper .zen-resources {
-        grid-area: res; } }
-@media (min-width: 900px) {
+@media (min-width: 640.1px) and (max-width: 1200px) {
   .page-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -205,15 +142,20 @@ body {
       top: 2%;
       left: 2%;
       content: "Issue #4";
-      font-size: 2em;
+      font-size: 1.1em;
+      background-color: green;
       background: url("./imgs/pow.png");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 350px 150px;
-      padding: 100px; }
+      background-size: 200px 95px;
+      padding: 100px;
+      margin-left: -80px;
+      margin-top: -80px;
+      animation: pulse 5s infinite;
+      transition: transform 5s ease; }
     .intro header {
       grid-area: header;
-      font-size: 3em;
+      font-size: 2.5em;
       text-align: center;
       font-family: ave;
       letter-spacing: 8px;
@@ -231,8 +173,11 @@ body {
       grid-area: preamble;
       text-align: center;
       color: white; }
+      .intro .preamble:hover {
+        font-size: 2em;
+        transition: font-size 5s ease; }
       .intro .preamble h3 {
-        font-size: 0.2em; }
+        font-size: 0.5em; }
       .intro .preamble p:nth-of-type(1) {
         font-size: 0.4em; }
       .intro .preamble p:nth-of-type(2) {
@@ -263,6 +208,527 @@ body {
       .main footer a {
         text-decoration: none;
         color: #ffffff; }
+    .main p {
+      padding: 1%; }
+    .main .explanation {
+      font-size: .8em;
+      color: #19191a;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . ." "p1 p1 ." ". p2 p2";
+      background: -webkit-radial-gradient(#5f8ee4 15%, transparent 16%), -webkit-radial-gradient(#5f8ee4 15%, transparent 16%), #1837ff;
+      background-position: 0 0, 80px 80px;
+      background-size: 160px 160px; }
+      .main .explanation h3 {
+        grid-area: head;
+        position: relative;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
+      .main .explanation p {
+        margin-left: 5%;
+        margin-right: 5%; }
+      .main .explanation p:nth-of-type(1) {
+        margin-top: -50px;
+        margin-bottom: 200px;
+        grid-area: p1;
+        position: relative;
+        background-color: #ffff00;
+        border-radius: .4em; }
+        .main .explanation p:nth-of-type(1):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-left-color: #ffff00;
+          border-right: 0;
+          border-top: 0;
+          margin-top: -26px;
+          margin-right: -52px; }
+        .main .explanation p:nth-of-type(1):before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 350px;
+          height: 250px;
+          background-image: url("imgs/flying1.png");
+          background-size: cover;
+          margin-top: -1px;
+          margin-right: -250px; }
+      .main .explanation p:nth-of-type(2) {
+        margin-top: -40px;
+        margin-bottom: 100px;
+        grid-area: p2;
+        position: relative;
+        background-color: #ffff00;
+        border-radius: .4em; }
+        .main .explanation p:nth-of-type(2):after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 62px solid transparent;
+          border-right-color: #ffff00;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -31px;
+          margin-left: -62px; }
+        .main .explanation p:nth-of-type(2):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 500px;
+          height: 300px;
+          margin-top: -85px;
+          margin-left: -250px;
+          background-image: url("imgs/generic4.png");
+          background-size: cover; }
+    .main .participation {
+      background: radial-gradient(circle farthest-side at 0% 50%, #fb1 23.5%, rgba(240, 166, 17, 0) 0) 21px 30px, radial-gradient(circle farthest-side at 0% 50%, #B71 24%, rgba(240, 166, 17, 0) 0) 19px 30px, linear-gradient(#fb1 14%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 85%, #fb1 0) 0 0, linear-gradient(150deg, #fb1 24%, #B71 0, #B71 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #B71 0, #B71 76%, #fb1 0) 0 0, linear-gradient(30deg, #fb1 24%, #B71 0, #B71 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #B71 0, #B71 76%, #fb1 0) 0 0, linear-gradient(90deg, #B71 2%, #fb1 0, #fb1 98%, #B71 0%) 0 0 #fb1;
+      background-size: 40px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "head . p1" "p2 . . " ". . p3"; }
+      .main .participation p {
+        margin-left: 5%;
+        margin-right: 5%; }
+      .main .participation h3 {
+        grid-area: head;
+        position: relative;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
+        .main .participation h3:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 100px;
+          height: 100px;
+          margin-top: 335px;
+          margin-left: 250px;
+          background-image: url("imgs/xavier.PNG");
+          background-size: cover;
+          transform: rotateY(180deg); }
+        .main .participation h3:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 0;
+          height: 0;
+          border: 25px solid #9c00f1;
+          border-left-color: #9c00f1;
+          border-radius: 100%;
+          border-right: 0;
+          border-top: 0;
+          margin-top: 305px;
+          margin-left: 305px; }
+      .main .participation p:nth-of-type(1) {
+        font-size: .8em;
+        grid-area: p1;
+        position: relative;
+        background-color: #00f610;
+        border-radius: .4em; }
+        .main .participation p:nth-of-type(1) a {
+          color: darkgreen; }
+        .main .participation p:nth-of-type(1):after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 52px solid transparent;
+          border-right-color: #00f610;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -15px;
+          margin-left: -50px; }
+        .main .participation p:nth-of-type(1):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 250px;
+          height: 250px;
+          margin-top: -100px;
+          margin-left: -230px;
+          background-image: url("./imgs/ironcat.png");
+          background-size: cover; }
+      .main .participation p:nth-of-type(2) {
+        font-size: .8em;
+        grid-area: p2;
+        position: relative;
+        background: orange;
+        border-radius: .4em; }
+        .main .participation p:nth-of-type(2):after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 50px solid transparent;
+          border-bottom-color: orange;
+          border-top: 0;
+          border-left: 0;
+          margin-left: -20px;
+          margin-top: -45px; }
+        .main .participation p:nth-of-type(2):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 115px;
+          height: 100px;
+          margin-top: -105px;
+          margin-left: 25px;
+          background-image: url("./imgs/generic1.PNG");
+          background-size: cover;
+          transform: rotateY(180deg); }
+      .main .participation p:nth-of-type(3) {
+        font-size: .8em;
+        grid-area: p3;
+        position: relative;
+        background: #9c00f1;
+        top: -25%;
+        border-radius: .4em;
+        margin-top: 40px; }
+        .main .participation p:nth-of-type(3) a {
+          color: #530155; }
+        .main .participation p:nth-of-type(3):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 56px solid #9c00f1;
+          border-right-color: #9c00f1;
+          border-radius: 100%;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-left: -71px; }
+        .main .participation p:nth-of-type(3):after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 36px solid #9c00f1;
+          border-right-color: #9c00f1;
+          border-radius: 100%;
+          border-left: 0;
+          border-top: 0;
+          margin-top: -28px;
+          margin-left: -110px; }
+    .main .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "head . ." "p1 . .";
+      background: repeating-linear-gradient(45deg, transparent, transparent 10px, #ccc 10px, #ccc 20px), linear-gradient(to bottom, #eee, #999); }
+      .main .benefits:hover p::after {
+        transform: scale(1); }
+      .main .benefits h3 {
+        grid-area: head;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%;
+        position: relative; }
+        .main .benefits h3after {
+          content: ". . .";
+          position: absolute; }
+      .main .benefits p {
+        margin-top: -150px;
+        grid-area: p1;
+        margin-left: 15px;
+        position: relative;
+        background: #ff0700;
+        border-radius: .4em; }
+        .main .benefits p:before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 0;
+          height: 0;
+          border: 75px solid transparent;
+          border-left-color: #ff0700;
+          border-right: 0;
+          margin-top: -74px;
+          margin-right: -74px; }
+        .main .benefits p::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 615px;
+          height: 550px;
+          margin-top: -280px;
+          margin-right: -450px;
+          background-image: url("./imgs/generic5.png");
+          background-size: cover;
+          transform: scale(0.1);
+          transition: transform .5s; }
+    .main .requirements {
+      background: red;
+      /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(red, yellow);
+      /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(red, yellow);
+      /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(red, yellow);
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(red, yellow);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "head p1 p1" "p2 . p3" "p4 p4 p5"; }
+      .main .requirements a {
+        color: red; }
+      .main .requirements h3 {
+        grid-area: head;
+        text-align: center;
+        text-decoration: underline;
+        margin-left: 5%; }
+      .main .requirements p {
+        margin-left: 5%;
+        margin-right: 5%; }
+      .main .requirements p:nth-of-type(1) {
+        grid-area: p1;
+        position: relative;
+        background: #ffffff;
+        border-radius: .4em; }
+        .main .requirements p:nth-of-type(1):after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -10%;
+          width: 0;
+          height: 0;
+          border: 34px solid transparent;
+          border-top-color: #ffffff;
+          border-bottom: 0;
+          border-left: 0;
+          margin-left: 140px;
+          margin-bottom: -34px; }
+      .main .requirements p:nth-of-type(2) {
+        width: 196px;
+        margin-top: -150px;
+        grid-area: p2;
+        position: relative;
+        background: #ffffff;
+        border-radius: .4em; }
+        .main .requirements p:nth-of-type(2):after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 30%;
+          width: 0;
+          height: 0;
+          border: 49px solid transparent;
+          border-left-color: #ffffff;
+          border-right: 0;
+          border-bottom: 0;
+          margin-top: 25px;
+          margin-right: -49px; }
+      .main .requirements p:nth-of-type(3) {
+        grid-area: p3;
+        position: relative;
+        background: #ffffff;
+        border-radius: .4em; }
+        .main .requirements p:nth-of-type(3):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 15%;
+          width: 150px;
+          height: 180px;
+          background-image: url("./imgs/supergirl.png");
+          background-size: cover;
+          margin-top: -30px;
+          margin-left: -175px; }
+        .main .requirements p:nth-of-type(3):after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 20%;
+          width: 0;
+          height: 0;
+          border: 40px solid transparent;
+          border-right-color: #ffffff;
+          border-left: 0;
+          border-bottom: 0;
+          margin-top: -20px;
+          margin-left: -40px; }
+      .main .requirements p:nth-of-type(4) {
+        grid-area: p4;
+        position: relative;
+        background: #ffffff;
+        border-radius: .4em;
+        margin-top: 5px; }
+        .main .requirements p:nth-of-type(4):after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 17px solid transparent;
+          border-bottom-color: #ffffff;
+          border-top: 0;
+          margin-left: -135px;
+          margin-top: -17px; }
+        .main .requirements p:nth-of-type(4):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 300px;
+          height: 100px;
+          background-image: url("./imgs/crouchingTiger.png");
+          background-size: cover;
+          margin-top: -148px;
+          margin-left: -45px; }
+      .main .requirements p:nth-of-type(5) {
+        grid-area: p5;
+        background-color: #e6e6e6;
+        transform: skew(-5px); }
+
+  aside {
+    grid-area: sidebar;
+    background-color: #e4655f;
+    height: 45%;
+    position: relative;
+    background: #00aabb;
+    border-radius: .4em; }
+    aside li {
+      list-style-type: none; }
+    aside:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 56px solid transparent;
+      border-top-color: #00aabb;
+      border-bottom: 0;
+      margin-left: -56px;
+      margin-bottom: -56px; }
+    aside:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      width: 250px;
+      height: 250px;
+      margin-top: 850px;
+      margin-left: -10px;
+      background-image: url("https://i.annihil.us/u/prod/marvel/i/mg/9/a0/54adb647b792d.png");
+      background-size: cover;
+      transform: scaleX(-1); } }
+@media (min-width: 1200.1px) {
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas: "intro intro intro intro intro intro" "main main main main main sidebar"; }
+
+  .intro {
+    grid-area: intro;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header" "preamble preamble preamble" "summary summary summary";
+    grid-column-gap: 10px;
+    background: url("http://www.powerpointhintergrund.com/uploads/comic-book-background-7.jpg"); }
+    .intro:before {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      content: "Issue #4";
+      font-size: 2em;
+      background-color: green;
+      background: url("./imgs/pow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 350px 150px;
+      padding: 100px;
+      animation: pulse 5s infinite;
+      transition: transform 5s ease; }
+    .intro header {
+      grid-area: header;
+      font-size: 3em;
+      text-align: center;
+      font-family: ave;
+      letter-spacing: 8px;
+      justify-self: center;
+      color: white; }
+    .intro .summary {
+      grid-area: summary;
+      text-align: center;
+      color: white; }
+      .intro .summary p:nth-of-type(1) {
+        font-size: 1.1em; }
+      .intro .summary p:nth-of-type(2) {
+        display: none; }
+    .intro .preamble {
+      grid-area: preamble;
+      text-align: center;
+      color: white; }
+      .intro .preamble:hover {
+        font-size: 2em;
+        transition: font-size 5s ease; }
+      .intro .preamble h3 {
+        font-size: 0.5em; }
+      .intro .preamble p:nth-of-type(1) {
+        font-size: 0.4em; }
+      .intro .preamble p:nth-of-type(2) {
+        font-size: 0.4em; }
+      .intro .preamble p:nth-of-type(3) {
+        font-size: 0.6em; }
+
+  abbr {
+    text-decoration: none; }
+
+  .main {
+    grid-area: main;
+    height: 2000px;
+    display: flex;
+    flex-flow: column nowrap; }
+    .main div {
+      background-color: #e6e6e6;
+      border-radius: 10px;
+      height: 25%;
+      margin-top: 1%; }
+    .main footer {
+      grid-area: foot;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      font-size: 2em;
+      background-color: black; }
+      .main footer a {
+        text-decoration: none;
+        color: #ffffff; }
+    .main p {
+      padding: 1%; }
     .main .explanation {
       font-size: 1.5em;
       color: #19191a;
@@ -429,7 +895,7 @@ body {
           border-top: 0;
           border-left: 0;
           margin-left: -50px;
-          margin-top: -100px; }
+          margin-top: -90px; }
         .main .participation p:nth-of-type(2):before {
           content: '';
           position: absolute;
@@ -483,6 +949,8 @@ body {
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas: "head . ." "p1 p1 .";
       background: repeating-linear-gradient(45deg, transparent, transparent 10px, #ccc 10px, #ccc 20px), linear-gradient(to bottom, #eee, #999); }
+      .main .benefits:hover p::after {
+        transform: scale(1); }
       .main .benefits h3 {
         grid-area: head;
         font-size: 2em;
@@ -512,7 +980,7 @@ body {
           border-right: 0;
           margin-top: -74px;
           margin-right: -74px; }
-        .main .benefits p:after {
+        .main .benefits p::after {
           content: '';
           position: absolute;
           right: 0;
@@ -522,7 +990,9 @@ body {
           margin-top: -250px;
           margin-right: -420px;
           background-image: url("./imgs/generic5.png");
-          background-size: cover; }
+          background-size: cover;
+          transform: scale(0.1);
+          transition: transform .5s; }
     .main .requirements {
       background: red;
       /* For browsers that do not support gradients */
@@ -616,10 +1086,10 @@ body {
           margin-left: -40px; }
       .main .requirements p:nth-of-type(4) {
         grid-area: p4;
-        margin-top: 50px;
         position: relative;
         background: #ffffff;
-        border-radius: .4em; }
+        border-radius: .4em;
+        margin-top: 5px; }
         .main .requirements p:nth-of-type(4):after {
           content: '';
           position: absolute;

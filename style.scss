@@ -39,63 +39,73 @@ body {
   background-size: 150px 150px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 550px) {
+
+  abbr{
+    text-decoration: none;
+  }
 
   .page-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     grid-template-areas:
-            "intro intro intro intro intro intro"
-            "sidebar sidebar sidebar sidebar sidebar sidebar"
-            "main main main main main main";
+            "intro"
+            "sidebar"
+            "main";
   }
 
   .intro {
     grid-area: intro;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas:
-            "header"
-            "preamble"
-            "summary";
-    background-color: purple;
+    grid-template-areas: "header"
+                         "preamble"
+                         "summary";
+    // background-color: lime;
     grid-column-gap: 10px;
+    background: url("http://www.powerpointhintergrund.com/uploads/comic-book-background-7.jpg");
+    font-size: 2em;
+    &:before{
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      content: "Issue #4";
+      font-size: 0.4em;
+      background: url("./imgs/pow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 150px 75px;
+      padding: 25px;
+    }
     header {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: auto;
-      grid-template-areas:
-              "h1" "h2";
       grid-area: header;
       text-align: center;
-      font-family: $comicTitle;
+      font-family: $ave;
+      letter-spacing: 8px;
       justify-self: center;
-      h1 {
-        grid-area: h1;
-        font-size: 3em;
-      }
-      h2 {
-        grid-area: h2;
-        font-size: 3em;
-      }
+      color: white;
+
     }
     .summary {
       grid-area: summary;
-      background-color: $light-blue;
+        text-align: center;
+        color: white;
+        font-size: 0.5em;
     }
     .preamble {
       grid-area: preamble;
-      background-color: $light-blue;
+      text-align: center;
+      color: white;
+      font-size: 0.5em;
     }
   }
 
   .main {
     grid-area: main;
-    background-color: orange;
     display: grid;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -103,17 +113,111 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
             "req" "part" "ben" "exp" "foot";
+    margin-top: 100%;
     .explanation {
       grid-area: exp;
+      position: relative;
+      background: #00aabb;
+      border-radius: .4em;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 49px solid transparent;
+        border-top-color: #00aabb;
+        border-bottom: 0;
+        margin-left: -49px;
+        margin-bottom: -49px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 300px;
+        height: 300px;
+        margin-top: 425px;
+        margin-left: 0px;
+        background-image: url('./imgs/ironcat.png');
+        background-size: cover;
+        transform: scaleX(-1);
+      }
     }
     .participation {
       grid-area: part;
+      margin-top: 200%;
+      position: relative;
+      background: #00aabb;
+      border-radius: .4em;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 49px solid transparent;
+        border-bottom-color: #00aabb;
+        border-top: 0;
+        margin-left: -49px;
+        margin-top: -49px;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -750px;
+        width: 300px;
+        height: 300px;
+        margin-top: 425px;
+        margin-left: 0px;
+        background-image: url('./imgs/generic5.png');
+        background-size: cover;
+      }
     }
     .benefits {
       grid-area: ben;
+      font-size: 0.4em;
+      background: url("./imgs/pow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      padding: 100px;
     }
     .requirements {
       grid-area: req;
+      position: relative;
+      background: #00aabb;
+      border-radius: .4em;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 49px solid transparent;
+        border-top-color: #00aabb;
+        border-bottom: 0;
+        margin-left: -49px;
+        margin-bottom: -49px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 600px;
+        width: 300px;
+        height: 300px;
+        margin-top: 425px;
+        margin-left: 0px;
+        background-image: url('./imgs/flying1.png');
+        background-size: cover;
+        transform: scaleX(-1);
+      }
     }
     div {
       background-color: $light-gray;
@@ -127,6 +231,7 @@ body {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       font-size: 1em;
       background-color: black;
+      margin-top: 100%;
       a {
         text-decoration: none;
       }
@@ -136,26 +241,43 @@ body {
   aside {
     grid-area: sidebar;
     background-color: $light-red;
-    .wrapper {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: auto;
-      grid-template-areas:
-              "des" "arch" "res";
-      .design-archives {
-        grid-area: arch;
-      }
-      .design-selection {
-        grid-area: des;
-      }
-      .zen-resources {
-        grid-area: res;
-      }
+    height: 100%;
+    position: relative;
+    background: #00aabb;
+    border-radius: .4em;
+    li{
+      list-style-type: none;
+    }
+    &:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 56px solid transparent;
+    border-top-color: #00aabb;
+    border-bottom: 0;
+    margin-left: -56px;
+    margin-bottom: -56px;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 120px;
+      width: 250px;
+      height: 250px;
+      margin-top: 425px;
+      margin-left: 0px;
+      background-image: url('https://i.annihil.us/u/prod/marvel/i/mg/9/a0/54adb647b792d.png');
+      background-size: cover;
+      transform: scaleX(-1);
     }
   }
 }
 
-@media (min-width: 640.1px) and (max-width: 1200px) {
+@media (min-width: 550px) and (max-width: 1200px) {
 
   .page-wrapper {
     display: grid;
